@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.assignment.controller.DashboardController">
+
+    <children>
+
+        <Label text="🖥️ Idle Detector Dashboard"
+               style="-fx-font-size: 22px; -fx-font-weight: bold;" />
+
+        // it is for the timer
+        <Label fx:id="timerLabel"
+               text="Timer: 00:00"
+               style="-fx-font-size: 18px; -fx-text-fill: blue;" />
+
+        // it will take inputs in seconds
+        <HBox spacing="10.0" alignment="CENTER">
+            <Label text="Check Idle for:" style="-fx-font-size: 14px;" />
+            <TextField fx:id="secondsField" prefWidth="80.0" text="30" />
+            <Label text="seconds" style="-fx-font-size: 14px;" />
+        </HBox>
+
+       // it is for start and stop buttons
+        <HBox spacing="10.0" alignment="CENTER">
+            <Button fx:id="startButton"
+                    onAction="#onStart"
+                    text="🚀 Start Idle Check"
+                    style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 16px;" />
+            <Button fx:id="stopButton"
+                    onAction="#onStop"
+                    text="⏹ Stop"
+                    style="-fx-font-size: 14px;" />
+        </HBox>
+
+
+        <Label fx:id="statusLabel"
+               text="Status: Ready"
+               style="-fx-font-size: 14px;" />
+
+        <Region HBox.hgrow="ALWAYS" />
+
+       // it is for when user is logged in
+        <Label fx:id="userLabel"
+               text="admin logged in"
+               style="-fx-font-size: 12px; -fx-text-fill: gray;" />
+
+    </children>
+
+    <alignment>CENTER</alignment>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <spacing>20.0</spacing>
+</VBox>
